@@ -1,0 +1,10 @@
+.gallery {
+    padding-bottom: 94px;
+    .swiper-slide {
+        height: auto;
+        min-height: 350px;
+    }
+    &__img {
+        min-height: 100%;
+    }
+}
