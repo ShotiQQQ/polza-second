@@ -7,16 +7,12 @@ import Main from './Components/Main/Main';
 import MapContent from './Components/Main/Map/MapContent';
 
 function App() {
-  document.addEventListener('DOMContentLoaded', () => {
-    console.log('loaded')
-  })
-
   return (
     <div className="App">
       <Layout>
+        <DroppingClothes />
         <Header />
         <Main>
-          <DroppingClothes />
           <MapContent />
           <Gallery />
         </Main>

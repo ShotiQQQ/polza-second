@@ -1,62 +1,36 @@
 import React, { useEffect } from 'react';
 import './droppingClothes.scss';
 import gsap from 'gsap';
+import { randomDuration } from '../../utils/randomDuration';
+import { randomDelay } from '../../utils/randomDelay';
+import { heightOfBody } from '../../utils/heightOfBody';
 
 const listOfDropImage = [
-    {path: './images/clothes_1.png', name: ''},
-    {path: './images/clothes_2.png', name: ''},
-    {path: './images/clothes_3.png', name: ''},
-    {path: './images/clothes_4.png', name: ''},
-    {path: './images/clothes_5.png', name: ''},
+    {id: 1, path: './images/clothes_1.png', name: ''},
+    {id: 2, path: './images/clothes_2.png', name: ''},
+    {id: 3, path: './images/clothes_3.png', name: ''},
+    {id: 4, path: './images/clothes_4.png', name: ''},
+    {id: 5, path: './images/clothes_5.png', name: ''},
 ]
 
 
 
 const DroppingClothes = () => {
     useEffect(() => {
-        gsap.to(".img1" , {
-            y: () => document.body.offsetHeight,
-            duration: 18,
-            delay: 3,
-            repeat: -1,
-        });
-        gsap.to(".img2" , {
-            y: () => document.body.offsetHeight,
-            duration: 16,
-            delay: 3,
-            repeat: -1,
-        });
-        gsap.to(".img3" , {
-            y: () => document.body.offsetHeight,
-            duration: 13,
-            delay: 3,
-            repeat: -1,
-        });
-        gsap.to(".img4" , {
-            y: () => document.body.offsetHeight,
-            duration: 20,
-            delay: 3,
-            repeat: -1,
-        });
-        gsap.to(".img5" , {
-            y: () => document.body.offsetHeight,
-            duration: 18,
-            delay: 3,
-            repeat: -1,
-        });
+        for (let image in listOfDropImage) {
+            gsap.to(`.img${+image + 1}`,{
+                y: heightOfBody,
+                duration: randomDuration,
+                repeat: -1,
+                delay: randomDelay});
+        }
     }, [])
-
+    
     return (
         <div className='dropping-clothes'>
-            <div className="dropping-clothes__left">
-                <img className='img1' src={listOfDropImage[0].path} alt="" />
-                <img className='img2' src={listOfDropImage[1].path} alt="" />
-                <img className='img3' src={listOfDropImage[2].path} alt="" />
-            </div>
-            <div className="dropping-clothes__right">
-                <img className='img4' src={listOfDropImage[3].path} alt="" />
-                <img className='img5' src={listOfDropImage[4].path} alt="" />
-            </div>
+            {listOfDropImage.map(img => {
+                return <img className={`img${img.id}`} src={img.path} alt={img.name} key={img.id}/>
+            })}
         </div>
     );
 };

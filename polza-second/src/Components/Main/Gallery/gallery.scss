@@ -8,4 +8,9 @@
         min-height: 100%;
         cursor: pointer;
     }
+    &__modal {
+        img {
+            width: 30%;
+        }
+    }
 }
