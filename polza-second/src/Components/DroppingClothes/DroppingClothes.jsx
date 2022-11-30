@@ -16,28 +16,33 @@ const DroppingClothes = () => {
     useEffect(() => {
         gsap.to(".img1" , {
             y: () => document.body.offsetHeight,
-            duration: 12,
-            delay: 1,
+            duration: 18,
+            delay: 3,
+            repeat: -1,
         });
         gsap.to(".img2" , {
             y: () => document.body.offsetHeight,
-            duration: 10,
-            delay: 1,
+            duration: 16,
+            delay: 3,
+            repeat: -1,
         });
         gsap.to(".img3" , {
             y: () => document.body.offsetHeight,
-            duration: 7,
-            delay: 1,
+            duration: 13,
+            delay: 3,
+            repeat: -1,
         });
         gsap.to(".img4" , {
             y: () => document.body.offsetHeight,
-            duration: 14,
-            delay: 1,
+            duration: 20,
+            delay: 3,
+            repeat: -1,
         });
         gsap.to(".img5" , {
             y: () => document.body.offsetHeight,
-            duration: 12,
-            delay: 1,
+            duration: 18,
+            delay: 3,
+            repeat: -1,
         });
     }, [])
 
