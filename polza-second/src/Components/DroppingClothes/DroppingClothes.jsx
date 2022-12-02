@@ -11,9 +11,7 @@ const listOfDropImage = [
     {id: 3, path: './images/clothes_3.png', name: ''},
     {id: 4, path: './images/clothes_4.png', name: ''},
     {id: 5, path: './images/clothes_5.png', name: ''},
-]
-
-
+];
 
 const DroppingClothes = () => {
     useEffect(() => {

@@ -41,7 +41,27 @@ const Gallery = () => {
                 <img src={currentSlide} alt="" />
             </Modal>}
             <div className="container gallery__container">
-                <Swiper wrapperTag='ul' slidesPerView={5} spaceBetween={25}>
+                <Swiper
+                    wrapperTag='ul'
+                    spaceBetween={25}
+                    breakpoints={{
+                        0: {
+                            slidesPerView: 1,
+                        },
+                        550: {
+                        slidesPerView: 2,
+                        },
+                        660: {
+                            slidesPerView: 3,
+                        },
+                        902: {
+                            slidesPerView: 4,
+                        },
+                        1220: {
+                            slidesPerView: 5,
+                        }
+                        }}
+                    >
                     {listOfImages.map(({ id, path, name}) => (
                         <SwiperSlide tag='li' key={id}>
                             <img onClick={clickOpen} className='gallery__img' alt={name} src={path}/>
